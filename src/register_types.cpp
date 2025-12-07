@@ -5,22 +5,29 @@
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
-#include "example_class.h"
+#include "default_editor_property_multiline_text.h"
+#include "editor_string_names.h"
+#include "scene_string_names.h"
 
 using namespace godot;
 
 void initialize_gdextension_types(ModuleInitializationLevel p_level)
 {
-	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+	if (p_level != MODULE_INITIALIZATION_LEVEL_EDITOR) {
 		return;
 	}
-	GDREGISTER_CLASS(ExampleClass);
+	GDREGISTER_CLASS(EditorPropertyDefaultMultilineText);
+	EditorStringNames::create();
+	SceneStringNames::create();
+
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {
-	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+	if (p_level != MODULE_INITIALIZATION_LEVEL_EDITOR) {
 		return;
 	}
+	EditorStringNames::free();
+	SceneStringNames::free();
 }
 
 extern "C"

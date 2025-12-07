@@ -3,6 +3,7 @@
 .godot/
 
 # Ignore library files but not the gdextension file
+bin/*
 demo/bin/*
 !demo/bin/android
 demo/bin/android/*

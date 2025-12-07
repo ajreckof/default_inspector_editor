@@ -5,8 +5,8 @@ import sys
 from methods import print_error
 
 
-libname = "EXTENSION-NAME"
-projectdir = "demo"
+libname = "DefaultEditorProperties"
+projectdir = "demo/addons/editor_property_default_multiline_text"
 
 localEnv = Environment(tools=["default"], PLATFORM="")
 
